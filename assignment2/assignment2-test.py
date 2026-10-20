@@ -22,7 +22,7 @@ def test_employee_find():
     assert len(match[0]) == 4
 
 def test_employee_find_2():
-    match = a2.employee_find_2(4)
+    match = a2.employee_find(4)
     assert match[0][0] == "4"
     assert len(match[0]) == 4
 
