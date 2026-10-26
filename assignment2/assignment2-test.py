@@ -1,6 +1,5 @@
 import assignment2 as a2
 import os
-
 def test_read_employees():
     employees = a2.read_employees()
     assert employees != None

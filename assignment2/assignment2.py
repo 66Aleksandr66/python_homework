@@ -1,6 +1,8 @@
+import os
 import csv
 import traceback
 import sys
+import custom_module
 # Task 2
 def read_employees():
     string = []
@@ -27,7 +29,7 @@ def read_employees():
     return my_dict
 
 employees = read_employees()
-# print(employees)
+print(employees)
 
 # Task 3
 def column_index(search_str):
@@ -43,3 +45,39 @@ def employee_find(employee_id):
         return int(row[employee_id_column]) == employee_id
     matches = list(filter(employee_match, employees["rows"]))
     return matches
+# Task 6
+def employee_find_2(employee_id):
+    matches = list(filter(lambda row: int(row[employee_id_column]) == employee_id, employees["rows"]))
+    return matches
+# Task 7
+def sort_by_last_name():
+     employees["rows"].sort(key = lambda row: row[column_index("last_name")])
+     return employees["rows"]
+sort_by_last_name()
+# Task 8
+def employee_dict(row_string):
+    new_dict = dict(zip(employees["fields"], row_string))
+    del new_dict["employee_id"]
+    return new_dict
+print(employee_dict(employees["rows"][0]))
+# Task 9
+def all_employees_dict():
+    my_dict={}
+    for row in employees["rows"]:
+        my_dict[row[employee_id_column]] = employee_dict(row)
+    return my_dict
+print(all_employees_dict())
+# Task 10
+def get_this_value():
+    return os.getenv("THISVALUE")
+print(get_this_value())
+# Task 11
+def set_that_secret(new_secret):
+    custom_module.set_secret(new_secret)
+# Task 12
+# def read_minutes():
+#     rows = []
+#     my_tuples = ()
+#     try:
+#         with open("../csv/minutes1.csv", 'r', newline='') as minutes1_table:
+            
