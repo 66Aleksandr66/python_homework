@@ -3,6 +3,7 @@ import csv
 import traceback
 import sys
 import custom_module
+from datetime import datetime
 # Task 2
 def read_employees():
     string = []
@@ -75,9 +76,66 @@ print(get_this_value())
 def set_that_secret(new_secret):
     custom_module.set_secret(new_secret)
 # Task 12
-# def read_minutes():
-#     rows = []
-#     my_tuples = ()
-#     try:
-#         with open("../csv/minutes1.csv", 'r', newline='') as minutes1_table:
-            
+def dry(path):
+    rows = []
+    my_dict = {}
+    try:
+        with open(path, 'r', newline='') as minutes1_table:
+            reader = csv.reader(minutes1_table)
+            header = next(reader)
+            my_dict['fields'] = header
+            for row in reader:
+                rows.append(tuple(row))
+        my_dict["rows"] = rows
+    except Exception as e:
+        trace_back = traceback.extract_tb(e.__traceback__)
+        stack_trace = list()
+        for trace in trace_back:
+            stack_trace.append(f'File : {trace[0]} , Line : {trace[1]}, Func.Name : {trace[2]}, Message : {trace[3]}')
+        print(f"Exception type: {type(e).__name__}")
+        message = str(e)
+        if message:
+            print(f"Exception message: {message}")
+        print(f"Stack trace: {stack_trace}")
+        sys.exit(1)
+    return my_dict
+def read_minutes():
+    minutes1 = dry("../csv/minutes1.csv")
+    minutes2 = dry("../csv/minutes2.csv")
+    return minutes1, minutes2
+minutes1, minutes2 = read_minutes()
+
+print(read_minutes())
+
+# Task 13
+def create_minutes_set():
+    return set(minutes1["rows"]).union(set(minutes2["rows"]))
+minutes_set = create_minutes_set()
+
+# Task 14
+def create_minutes_list():
+    return list(map(lambda x:(x[0], datetime.strptime(x[1], "%B %d, %Y")),list(minutes_set)))
+minutes_list = create_minutes_list()
+
+# Task 15
+def write_sorted_list():
+    minutes_list.sort(key = lambda row : row[1])
+    result = list(map(lambda x :(x[0],datetime.strftime(x[1], "%B %d, %Y")), minutes_list))
+    try:
+        with open("./minutes.csv", 'w', newline='') as result_minutes_table:
+            writer = csv.writer(result_minutes_table)
+            writer.writerow(minutes1["fields"])
+            writer.writerows(result)
+    except Exception as e:
+            trace_back = traceback.extract_tb(e.__traceback__)
+            stack_trace = list()
+            for trace in trace_back:
+                stack_trace.append(f'File : {trace[0]} , Line : {trace[1]}, Func.Name : {trace[2]}, Message : {trace[3]}')
+            print(f"Exception type: {type(e).__name__}")
+            message = str(e)
+            if message:
+                print(f"Exception message: {message}")
+            print(f"Stack trace: {stack_trace}")
+            sys.exit(1)
+    return result
+print(write_sorted_list())
