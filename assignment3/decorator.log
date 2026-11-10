@@ -1,0 +1,112 @@
+function:<function logger_decorator.<locals>.wrapper at 0x0000015EAF0932E0>
+positional parameters:(2, 3)
+keyword parameters:none
+return:5
+function:<function logger_decorator.<locals>.wrapper at 0x000001D9ED1832E0>
+positional parameters:(2, 3)
+keyword parameters:none
+return:5
+function:5
+positional parameters:(2, 3)
+keyword parameters:none
+return:5
+function:add
+positional parameters:(2, 3)
+keyword parameters:none
+return:5
+function: add
+positional parameters: (2, 3)
+keyword parameters: none
+return: 5
+function: greeting
+positional parameters: none
+keyword parameters: none
+return: None
+function: args_func
+positional parameters: none
+keyword parameters: none
+return: True
+function: kwargs_func
+positional parameters: none
+keyword parameters: none
+return: <function logger_decorator at 0x00000287E6B33BA0>
+function: greeting
+positional parameters: none
+keyword parameters: none
+return: None
+function: args_func
+positional parameters: none
+keyword parameters: none
+return: True
+function: kwargs_func
+positional parameters: none
+keyword parameters: none
+return: <function logger_decorator at 0x0000028031103BA0>
+function: greeting
+positional parameters: none
+keyword parameters: none
+return: None
+function: args_func
+positional parameters: (1, 2, 3)
+keyword parameters: none
+return: True
+function: greeting
+positional parameters: none
+keyword parameters: none
+return: None
+function: args_func
+positional parameters: (1, 2, 3)
+keyword parameters: none
+return: True
+function: kwargs_func
+positional parameters: none
+keyword parameters: {'book': 'War and Piece'}
+return: <function logger_decorator at 0x0000024F90F23BA0>
+function: greeting
+positional parameters: none
+keyword parameters: none
+return: None
+function: args_func
+positional parameters: (1, 2, 3)
+keyword parameters: none
+return: True
+function: kwargs_func
+positional parameters: none
+keyword parameters: {'book': 'War and Peace'}
+return: <function logger_decorator at 0x0000025583663BA0>
+function: greeting
+positional parameters: none
+keyword parameters: none
+return: None
+function: args_func
+positional parameters: (1, 2, 3)
+keyword parameters: none
+return: True
+function: kwargs_func
+positional parameters: none
+keyword parameters: {'book': 'War and Peace'}
+return: <function logger_decorator at 0x000001B004993BA0>
+function: greeting
+positional parameters: none
+keyword parameters: none
+return: None
+function: args_func
+positional parameters: (1, 2, 3)
+keyword parameters: none
+return: True
+function: kwargs_func
+positional parameters: none
+keyword parameters: {'book': 'War and Peace'}
+return: <function logger_decorator at 0x000002C300F33BA0>
+function: greeting
+positional parameters: none
+keyword parameters: none
+return: None
+function: args_func
+positional parameters: (1, 2, 3)
+keyword parameters: none
+return: True
+function: kwargs_func
+positional parameters: none
+keyword parameters: {'book': 'War and Peace'}
+return: <function logger_decorator at 0x000002823BC53BA0>
