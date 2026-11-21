@@ -1,6 +1,5 @@
 import assignment2 as a2
 import os
-
 def test_read_employees():
     employees = a2.read_employees()
     assert employees != None
@@ -22,7 +21,7 @@ def test_employee_find():
     assert len(match[0]) == 4
 
 def test_employee_find_2():
-    match = a2.employee_find_2(4)
+    match = a2.employee_find(4)
     assert match[0][0] == "4"
     assert len(match[0]) == 4
 
